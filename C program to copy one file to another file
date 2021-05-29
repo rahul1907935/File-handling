@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<conio.h>
+int main ()
+{
+char ch;
+FILE *fp1,*fp2;
+fp1=fopen("data 1","r");
+fp2=fopen("data 2","w");
+while ((ch=fgetc(fp1))!=EOF)
+{
+fputc(ch,fp2);
+}
+fclose(fp1);
+fclose(fp2);
+printf ("\n After copy file contents\n");
+fp1=fopen("data 2","r");
+while ((ch=fgetc(fp1))!=EOF)
+{
+printf ("%c",ch);
+}
+fclose(fp1);
+getch();
+}
